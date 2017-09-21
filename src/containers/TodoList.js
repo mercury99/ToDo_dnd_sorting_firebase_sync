@@ -71,7 +71,7 @@ export default class TodoList extends Component {
     };
 
     componentDidUpdate(prevProps) {
-        if (prevProps.sorting !== this.props.sorting) {
+        if (prevProps.todos !== this.props.todos || prevProps.sorting !== this.props.sorting) {
 
             if (this.sortableList) {
                 this.sortableList.destroy()
