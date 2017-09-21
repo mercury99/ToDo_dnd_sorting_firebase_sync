@@ -62,11 +62,11 @@ export default class TodoList extends Component {
 
     componentDidMount() {
         todos.child("todos").on("value", (snap) => {
-            this.props.todosResponse(snap.val());
+            this.props.todosResponse(snap.val() || []);
         });
 
         sorting.on("value", (snap) => {
-            this.props.responseSorting(snap.val());
+            this.props.responseSorting(snap.val() || []);
         });
     };
 
